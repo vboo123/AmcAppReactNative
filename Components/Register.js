@@ -1,21 +1,59 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
-export default function App()
+export default class Register extends React.Component
 {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  render()
+  {
+    return(
+        <View style={styles.register}>
+            <Text style={styles.header}>Registration</Text>
+
+            <TextInput style={style.textinput} placeholder="Your name"
+            underlineColorAndroid={'transparent'} />
+
+            <TextInput style={style.textinput} placeholder="Your Email"
+            underlineColorAndroid={'transparent'} />
+
+            <TextInput style={style.textinput} placeholder="Your Password"
+            secureTextEntry={true} underlineColorAndroid={'transparent'} />
+
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.btnText}>Signup</Text>
+            </TouchableOpacity>
+        </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  register: {
+    alignSelf: 'stretch',
   },
+  header: {
+    fontSize: 24,
+    color: '#000000',
+    paddingBottom: 10,
+    marginBottom: 40,
+    borderBottomColor: '#129923',
+    borderBottomWidth: 1,
+  },
+  textinput: {
+    alignSelf: 'stretch',
+    height: 40,
+    marginBottom: 30,
+    color: '#000000',
+    borderBottomColor: '#129923',
+    borderBottomWidth: 1,
+  },
+  button: {
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#eee',
+    marginTop: 30,
+  },
+  btnText: {
+    color: '#000000',
+    fontWeight: 'bold',
+  }
 });
