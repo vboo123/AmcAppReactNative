@@ -1,3 +1,4 @@
+import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 export default class Register extends React.Component
@@ -8,13 +9,13 @@ export default class Register extends React.Component
         <View style={styles.register}>
             <Text style={styles.header}>Registration</Text>
 
-            <TextInput style={style.textinput} placeholder="Your name"
+            <TextInput style={styles.textinput} placeholder="Your name"
             underlineColorAndroid={'transparent'} />
 
-            <TextInput style={style.textinput} placeholder="Your Email"
+            <TextInput style={styles.textinput} placeholder="Your Email"
             underlineColorAndroid={'transparent'} />
 
-            <TextInput style={style.textinput} placeholder="Your Password"
+            <TextInput style={styles.textinput} placeholder="Your Password"
             secureTextEntry={true} underlineColorAndroid={'transparent'} />
 
             <TouchableOpacity style={styles.button}>
