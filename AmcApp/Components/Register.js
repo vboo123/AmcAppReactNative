@@ -1,10 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
-export default class Register extends React.Component
+export default function Register()
 {
-  render()
-  {
     return(
         <View style={styles.register}>
             <Text style={styles.header}>Registration</Text>
