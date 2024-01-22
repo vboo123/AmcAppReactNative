@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Text, TextInput, View, Button} from 'react-native';
 
 const Login = () => {
+  return(
     <View style={{padding: 10}}>
 
         <Text>Email</Text>
@@ -20,5 +21,6 @@ const Login = () => {
 
       <Button>"Login"</Button>
     </View>
+  )
 };
 export default Login;
