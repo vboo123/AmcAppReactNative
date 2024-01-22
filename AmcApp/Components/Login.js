@@ -3,7 +3,7 @@ import {Text, TextInput, View, Button} from 'react-native';
 
 const Login = () => {
     <View style={{padding: 10}}>
-        
+
         <Text>Email</Text>
         style={{height: 50}}
       <TextInput
@@ -21,3 +21,4 @@ const Login = () => {
       <Button>"Login"</Button>
     </View>
 };
+export default Login;
