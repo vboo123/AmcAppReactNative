@@ -23,7 +23,6 @@ export default class Register extends React.Component
             </TouchableOpacity>
         </View>
     );
-  }
 }
 
 const styles = StyleSheet.create({
