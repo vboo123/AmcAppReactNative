@@ -1,29 +1,36 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
-export default function Register()
+export default function VolunteerRegister()
 {
-  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
     return(
         <View style={styles.register}>
             <Text style={styles.header}>Registration</Text>
 
-            <TextInput style={styles.textinput} placeholder="Your name"
-            onChangeText = {newText => setName(newText)}
-            defaultValue={name}
+            <TextInput style={styles.textinput} placeholder="Parent first name"
+            onChangeText={newText => setFirstName(newText)}
+            defaultValue={firstName}
+            underlineColorAndroid={'transparent'} />
+
+            <TextInput style={styles.textinput} placeholder="Parent last name"
+            onChangeText={newText => setLastName(newText)}
+            defaultValue={lastName}
             underlineColorAndroid={'transparent'} />
 
             <TextInput style={styles.textinput} placeholder="Your Email"
-            onChangeText = {newText => setEmail(newText)}
+            onChangeText={newText => setEmail(newText)}
             defaultValue={email}
             underlineColorAndroid={'transparent'} />
 
             <TextInput style={styles.textinput} placeholder="Your Password"
-            onChangeText = {newText => setPassword(newText)}
+            onChangeText={newText => setPassword(newText)}
             defaultValue={password}
-            secureTextEntry={true} underlineColorAndroid={'transparent'} />
+            secureTextEntry={true}
+            underlineColorAndroid={'transparent'} />
 
             <TouchableOpacity style={styles.button}>
               <Text style={styles.btnText}>Signup</Text>
