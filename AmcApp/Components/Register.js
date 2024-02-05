@@ -1,19 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 export default function Register()
 {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
     return(
         <View style={styles.register}>
             <Text style={styles.header}>Registration</Text>
 
             <TextInput style={styles.textinput} placeholder="Your name"
+            onChangeText = {newText => setName(newText)}
+            defaultValue={name}
             underlineColorAndroid={'transparent'} />
 
             <TextInput style={styles.textinput} placeholder="Your Email"
+            onChangeText = {newText => setEmail(newText)}
+            defaultValue={email}
             underlineColorAndroid={'transparent'} />
 
             <TextInput style={styles.textinput} placeholder="Your Password"
+            onChangeText = {newText => setPassword(newText)}
+            defaultValue={password}
             secureTextEntry={true} underlineColorAndroid={'transparent'} />
 
             <TouchableOpacity style={styles.button}>
