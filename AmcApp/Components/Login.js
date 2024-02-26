@@ -1,12 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
 import StudentRegister from './StudentRegister';
 
-export default function App()
+export default function Login({navigation})
 {
   return (
     <View style={styles.container}>
-      <StudentRegister />
+
+        <Button title='Student Registration' style={styles.button} onPress={() => navigation.navigate('StudentRegister')}></Button>
+
+        <Button title='Volunteer Registration' style={styles.button} onPress={() => navigation.navigate('VolunteerRegister')}></Button>
+
       <StatusBar style="auto" />
     </View>
   );

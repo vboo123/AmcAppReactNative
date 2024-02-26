@@ -9,7 +9,7 @@ export default function VolunteerRegister()
   const [password, setPassword] = useState('');
     return(
         <View style={styles.register}>
-            <Text style={styles.header}>Registration</Text>
+            <Text style={styles.header}>Volunteer Registration</Text>
 
             <TextInput style={styles.textinput} placeholder="Volunteer first name"
             onChangeText={newText => setFirstName(newText)}
