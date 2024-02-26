@@ -9,7 +9,7 @@ export default function StudentRegister()
   const [password, setPassword] = useState('');
     return(
         <View style={styles.register}>
-            <Text style={styles.header}>Registration</Text>
+            <Text style={styles.header}>Student Registration</Text>
 
             <TextInput style={styles.textinput} placeholder="Parent first name"
             onChangeText={newText => setFirstName(newText)}
@@ -35,6 +35,7 @@ export default function StudentRegister()
             <TouchableOpacity style={styles.button}>
               <Text style={styles.btnText}>Signup</Text>
             </TouchableOpacity>
+            
         </View>
     );
 }

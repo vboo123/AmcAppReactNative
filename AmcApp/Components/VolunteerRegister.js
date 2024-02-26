@@ -11,12 +11,12 @@ export default function VolunteerRegister()
         <View style={styles.register}>
             <Text style={styles.header}>Registration</Text>
 
-            <TextInput style={styles.textinput} placeholder="Parent first name"
+            <TextInput style={styles.textinput} placeholder="Volunteer first name"
             onChangeText={newText => setFirstName(newText)}
             defaultValue={firstName}
             underlineColorAndroid={'transparent'} />
 
-            <TextInput style={styles.textinput} placeholder="Parent last name"
+            <TextInput style={styles.textinput} placeholder="Volunteer last name"
             onChangeText={newText => setLastName(newText)}
             defaultValue={lastName}
             underlineColorAndroid={'transparent'} />
