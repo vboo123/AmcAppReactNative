@@ -7,12 +7,12 @@ export default function Login({navigation})
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.container}>
-      <Button title ='Register' style={styles.button} OnPress={() => setModalVisible(true)}></Button>
+      <Button title ='Register' style={styles.button} onPress={() => setModalVisible(true)}></Button>
       <Modal animationType='slide' transparent={true} visible={modalVisible}>
         <View style={styles.container}>
           <View style={styles.modalView}>
-            <Button title='Student Registration' style={styles.button} onPress={() => navigation.navigate('StudentRegister')}{...(setModalVisible(!modalVisible))}></Button>
-            <Button title='Volunteer Registration' style={styles.button} onPress={() => navigation.navigate('VolunteerRegister')}{...(setModalVisible(!modalVisible))}></Button>
+            <Button title='Student Registration' style={styles.button} onPress={() => navigation.navigate('StudentRegister')}></Button>
+            <Button title='Volunteer Registration' style={styles.button} onPress={() => navigation.navigate('VolunteerRegister')}></Button>
           </View>
         </View>
       </Modal>
