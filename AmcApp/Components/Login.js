@@ -7,7 +7,7 @@ export default function Login({navigation})
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.container}>
-      <Button title ='Register' style={styles.button} onPress={() => setModalVisible(true)}></Button>
+      <Button title ='Register' style={styles.button} onPress={() => setModalVisible(!modalVisible)}></Button>
       <Modal animationType='slide' transparent={true} visible={modalVisible}>
         <View style={styles.container}>
           <View style={styles.modalView}>
