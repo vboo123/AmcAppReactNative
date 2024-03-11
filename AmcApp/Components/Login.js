@@ -6,6 +6,25 @@ import Styles from '../Styling/Styles.css';
 export default function Login({navigation})
 {
   const [modalVisible, setModalVisible] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  function onPressRegister(registerType)
+  {
+    if(registerType === 'StudentRegister')
+    {
+      navigation.navigate('StudentRegister')
+    }
+    if(registerType === 'VolunteerRegister')
+    {
+      navigation.navigate('VolunteerRegister')
+    }
+    if(modalVisible)
+    {
+      setModalVisible(false)
+    }
+  }
+
   return (
     <View style={Styles.container}>
       <TouchableOpacity title ='Register' style={Styles.button} onPress={() => setModalVisible(!modalVisible)}>
@@ -14,10 +33,10 @@ export default function Login({navigation})
       <Modal animationType='slide' transparent={true} visible={modalVisible}>
         <View style={Styles.container}>
           <View style={styles.modalView}>
-            <TouchableOpacity style={Styles.button} onPress={() => navigation.navigate('StudentRegister')}>
+            <TouchableOpacity style={Styles.button} onPress={() => onPressRegister('StudentRegister')}>
               <Text style={Styles.btnText}>Student Registration</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={Styles.button} onPress={() => navigation.navigate('VolunteerRegister')}>
+            <TouchableOpacity style={Styles.button} onPress={() => onPressRegister('VolunteerRegister')}>
               <Text style={Styles.btnText}>Volunteer Registration</Text>
             </TouchableOpacity>
           </View>
