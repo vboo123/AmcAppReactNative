@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { Text, Modal, View, TouchableOpacity, TextInput } from 'react-native';
+import { Text, Modal, View, TouchableOpacity, TextInput, Image } from 'react-native';
 import Styles from '../Styling/Styles.css';
 
 export default function Login({navigation})
@@ -27,6 +27,7 @@ export default function Login({navigation})
 
   return (
     <View style={Styles.container}>
+      <StatusBar style="auto" backgroundColor="transparent" translucent={true}/>
       <TextInput style={Styles.textinput} placeholder="Your Email"
         onChangeText={newText => setEmail(newText)}
         defaultValue={email}
@@ -57,7 +58,6 @@ export default function Login({navigation})
           </View>
         </View>
       </Modal>
-      <StatusBar style="auto" />
     </View>
   );
 }
