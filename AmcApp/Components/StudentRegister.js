@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import Styles from '../Styling/Styles.css';
 
 export default function StudentRegister()
 {
@@ -32,8 +33,8 @@ export default function StudentRegister()
             secureTextEntry={true}
             underlineColorAndroid={'transparent'} />
 
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.btnText}>Signup</Text>
+            <TouchableOpacity style={Styles.button}>
+              <Text style={Styles.btnText}>Signup</Text>
             </TouchableOpacity>
             
         </View>
@@ -59,16 +60,5 @@ const styles = StyleSheet.create({
     color: '#000000',
     borderBottomColor: '#129923',
     borderBottomWidth: 1,
-  },
-  button: {
-    alignSelf: 'stretch',
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: '#eee',
-    marginTop: 30,
-  },
-  btnText: {
-    color: '#000000',
-    fontWeight: 'bold',
   }
 });
