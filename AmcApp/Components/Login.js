@@ -1,18 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, Modal, View, TouchableOpacity, Button} from 'react-native';
+import Styles from '../Styling/Styles.css';
 
 export default function Login({navigation})
 {
   const [modalVisible, setModalVisible] = useState(false);
   return (
-    <View style={styles.container}>
-      <Button title ='Register' style={styles.button} onPress={() => setModalVisible(!modalVisible)}></Button>
+    <View style={Styles.container}>
+      <TouchableOpacity title ='Register' style={Styles.button} onPress={() => setModalVisible(!modalVisible)}>
+        <Text style={Styles.btnText}>Register</Text>
+      </TouchableOpacity>
       <Modal animationType='slide' transparent={true} visible={modalVisible}>
-        <View style={styles.container}>
+        <View style={Styles.container}>
           <View style={styles.modalView}>
-            <Button title='Student Registration' style={styles.button} onPress={() => navigation.navigate('StudentRegister')}></Button>
-            <Button title='Volunteer Registration' style={styles.button} onPress={() => navigation.navigate('VolunteerRegister')}></Button>
+            <TouchableOpacity style={Styles.button} onPress={() => navigation.navigate('StudentRegister')}>
+              <Text style={Styles.btnText}>Student Registration</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={Styles.button} onPress={() => navigation.navigate('VolunteerRegister')}>
+              <Text style={Styles.btnText}>Volunteer Registration</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </Modal>
@@ -22,14 +29,6 @@ export default function Login({navigation})
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingLeft: 60,
-      paddingRight: 60,
-    },
     modalView: {
     margin: 20,
     backgroundColor: 'white',
@@ -44,12 +43,5 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
-   },
-   button: {
-    alignSelf: 'stretch',
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: '#eee',
-    marginTop: 30,
-  }
+   }
   });
