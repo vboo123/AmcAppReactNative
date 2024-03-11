@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text, Modal, View, TouchableOpacity, Button} from 'react-native';
+import { Text, Modal, View, TouchableOpacity, TextInput } from 'react-native';
 import Styles from '../Styling/Styles.css';
 
 export default function Login({navigation})
@@ -27,12 +27,27 @@ export default function Login({navigation})
 
   return (
     <View style={Styles.container}>
+      <TextInput style={Styles.textinput} placeholder="Your Email"
+        onChangeText={newText => setEmail(newText)}
+        defaultValue={email}
+        underlineColorAndroid={'transparent'} />
+
+      <TextInput style={Styles.textinput} placeholder="Your Password"
+        onChangeText={newText => setPassword(newText)}
+        defaultValue={password}
+        secureTextEntry={true}
+        underlineColorAndroid={'transparent'} />
+
+      <TouchableOpacity style={Styles.button}>
+        <Text style={Styles.btnText}>Login</Text>
+      </TouchableOpacity>
+
       <TouchableOpacity title ='Register' style={Styles.button} onPress={() => setModalVisible(!modalVisible)}>
         <Text style={Styles.btnText}>Register</Text>
       </TouchableOpacity>
       <Modal animationType='slide' transparent={true} visible={modalVisible}>
         <View style={Styles.container}>
-          <View style={styles.modalView}>
+          <View style={Styles.modalView}>
             <TouchableOpacity style={Styles.button} onPress={() => onPressRegister('StudentRegister')}>
               <Text style={Styles.btnText}>Student Registration</Text>
             </TouchableOpacity>
@@ -46,21 +61,3 @@ export default function Login({navigation})
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-    modalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-   }
-  });
