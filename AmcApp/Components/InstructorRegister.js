@@ -29,7 +29,7 @@ export default function InstructorRegister()
             defaultValue = {email}
             underlineColorAndroid = {'transparent'}/>
 
-            <TextInput style = {styles.textinput} placeholders = "Your Phone Number"
+            <TextInput style = {styles.textinput} placeholder = "Your Phone Number"
             onChangeText = {newText => setPhoneNumber(newText)}
             defaultValue = {phoneNumber}
             underlineColorAndroid = {'transparent'}/>
@@ -40,9 +40,9 @@ export default function InstructorRegister()
             secureTextEntry={true}
             underlineColorAndroid={'transparent'} />
 
-            <TextInput style = {styles.textinput} placeholders = "Your Phone Number"
-            onChangeText = {newText => setPhoneNumber(newText)}
-            defaultValue = {phoneNumber}
+            <TextInput style = {styles.textinput} placeholder = "Additional Info"
+            onChangeText = {newText => setAdditionalInfo(newText)}
+            defaultValue = {additionalInfo}
             underlineColorAndroid = {'transparent'}/>
 
             <TouchableOpacity style = {Styles.button}>

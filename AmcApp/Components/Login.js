@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, Modal, View, TouchableOpacity, Button} from 'react-native';
 import Styles from '../Styling/Styles.css';
 
+
 export default function Login({navigation})
 {
   const [modalVisible, setModalVisible] = useState(false);
@@ -21,6 +22,7 @@ export default function Login({navigation})
     }
     if(registerType === 'InstructorRegister')
       {
+        console.log("Successfull performed onPressRegister for Instructor Register!")
         navigation.navigate('InstructorRegister')
       }
     if(modalVisible)
