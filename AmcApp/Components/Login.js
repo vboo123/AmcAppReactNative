@@ -19,6 +19,10 @@ export default function Login({navigation})
     {
       navigation.navigate('VolunteerRegister')
     }
+    if(registerType === 'InstructorRegister')
+      {
+        navigation.navigate('InstructorRegister')
+      }
     if(modalVisible)
     {
       setModalVisible(false)
@@ -38,6 +42,9 @@ export default function Login({navigation})
             </TouchableOpacity>
             <TouchableOpacity style={Styles.button} onPress={() => onPressRegister('VolunteerRegister')}>
               <Text style={Styles.btnText}>Volunteer Registration</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={Styles.button} onPress={() => onPressRegister('InstructorRegister')}>
+              <Text style={Styles.btnText}>Instructor Registration</Text>
             </TouchableOpacity>
           </View>
         </View>
